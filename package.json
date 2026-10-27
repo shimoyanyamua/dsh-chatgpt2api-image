@@ -1,0 +1,44 @@
+{
+  "description": "DeepSeek Harness 生图插件：把自托管 chatgpt2api 服务（gpt-image-2 / gpt-image-2.5）接成 DSH 的 generate_image 工具，带设置 → ChatGPT 生图 配置页与会话内图片卡片。结构参考 dsh-agnes-multimodal（MIT），代码重新编写，不含 Agnes 代码与密钥。",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "chatgpt2api",
+    "image-generation"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "dsh-chatgpt2api-image",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.2.0"
+  },
+  "type": "module",
+  "version": "1.2.0"
+}

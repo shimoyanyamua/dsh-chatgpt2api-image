@@ -1,0 +1,13 @@
+# dsh-chatgpt2api-image bundle patch — one loader entry mounting the plugin package.
+#
+# 单个 loader entry 同时挂载「ChatGPT 生图」设置页与 generate_image 模型工具，
+# 以及配套的会话内图片卡片 UI。
+#
+# 浏览器半由 dsh-client-modules 通过 package.json 的 dsh.client 声明 +
+# exports["./client"] 自动编入，无需在此声明。
+#
+# Manual mount: add the same row to the profile's cordis.patch.yml, or install
+# the package with `dsh plugin --profile <name> add dsh-chatgpt2api-image`.
+- insert:
+  - id: chatgpt2api-image
+    name: 'dsh-chatgpt2api-image'
